@@ -1,0 +1,11 @@
+{
+  "name": "loadout",
+  "description": "Personal agent skills for everyday engineering work.",
+  "author": {
+    "name": "Angel Vasilev",
+    "url": "https://github.com/a-vasilev"
+  },
+  "repository": "https://github.com/a-vasilev/loadout",
+  "license": "MIT",
+  "keywords": ["skills", "productivity", "engineering"]
+}

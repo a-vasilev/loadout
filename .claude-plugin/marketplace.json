@@ -1,0 +1,15 @@
+{
+  "name": "loadout",
+  "owner": {
+    "name": "Angel Vasilev",
+    "url": "https://github.com/a-vasilev"
+  },
+  "description": "Angel Vasilev's personal agent skills for Claude Code, Codex and Cursor.",
+  "plugins": [
+    {
+      "name": "loadout",
+      "source": "./",
+      "description": "Personal agent skills for everyday engineering work."
+    }
+  ]
+}
