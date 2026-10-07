@@ -9,7 +9,7 @@ This repo is a collection of agent skills, installed on other machines with
 - `skills/<name>/SKILL.md`: one folder per skill. Keep it flat, with no category subfolders.
 - `skills/<name>/scripts/`, `skills/<name>/references/`: optional files the skill uses.
 - `.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json`: the Claude Code plugin. Skills in `skills/` are picked up automatically, so don't list them here.
-- `scripts/validate.mjs`: the repo check, which also runs in CI.
+- `scripts/validate.mjs`: the repo check.
 
 ## Adding or changing a skill
 
