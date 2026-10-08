@@ -9,8 +9,8 @@ Write the answer as one HTML page, open it, and keep the chat reply short.
 
 ## Steps
 
-1. Write the page to `${TMPDIR:-/tmp}/<short-kebab-title>.html`, following Formatting.
-2. Open it: `open <path>` on macOS, `xdg-open <path>` on Linux.
+1. Write the page to `<short-kebab-title>.html` in the system temp directory (`${TMPDIR:-/tmp}` on macOS and Linux, `$env:TEMP` on Windows), following Formatting.
+2. Open it: `open <path>` on macOS, `xdg-open <path>` on Linux, `Start-Process <path>` in PowerShell on Windows (`start "" <path>` from cmd or Git Bash).
 3. Reply in chat with the path and the bottom line in two or three sentences.
 
 ## Formatting
