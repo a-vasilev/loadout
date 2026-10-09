@@ -27,7 +27,7 @@ The PR is on Bitbucket. Use the Bitbucket MCP server to fetch the PR's title, de
 
 ## Report
 
-Use this template for the content, not styling of the report:
+Use this template for the content and order. Render it as HTML sections, not a literal Markdown block:
 
 ```
 ## Impact and Merge Danger
@@ -46,7 +46,7 @@ Use this template for the content, not styling of the report:
 
 ## Summary
 
-<diagram, diff-sketch, or tree>
+<rendered visual summary: pseudocode, diagram, diff or tree>
 
 ## Issues
 
@@ -67,118 +67,17 @@ After the visual summary, list the findings under **Issues**, ordered by severit
 
 ## Summary
 
-Skip all preambles and keep prose brief, this section should show visually what the changes do, rather than try to explain them.
+Show the PR's overall intent and the change in behavior or structure visually. Skip preambles and keep prose brief. Synthesize the important changes into the smallest useful view; add another only when distinct changes need it.
 
-Pick the smallest view that makes the key point clear.
+Choose the representation that makes the key point clear, and render it as appropriate depending on the overall report output - html, markdown, etc:
 
-- Show logic or an algorithm as pseudocode:
+- **Logic or algorithms**: styled, indented pseudocode with restrained emphasis on the changed steps. Preserve whitespace and escape code so component names and other angle-bracket text remain visible.
+- **Runtime, UI or file structure**: a compact, styled call tree, component tree or shallow file tree. Make hierarchy clear through indentation and connectors; include state, module boundaries and responsibilities only where they explain the change.
+- **Interactions or flows**: a rendered Mermaid diagram or a simple HTML/CSS or inline SVG illustration with labeled nodes and arrows. Show the diagram itself, not its source.
+- **Changes to an existing shape**: a styled inline diff or labeled Before/After panels, applying equally to pseudocode, trees and control flow. Visually distinguish added and removed lines with green/red text or tinted backgrounds, keep unchanged context muted, and retain labels or markers so color is not the only cue. Plain text with only `+` and `-` prefixes is not sufficient.
+- **Mostly new content**: show the complete relevant block or illustration when a diff would obscure ownership, order or the resulting shape, or when a copyable target is useful.
 
-```text
-on(save)
-  if content is unchanged
-    return cached result
-  write new content
-  return fresh result
-```
-
-- Show runtime control flow as a call tree:
-
-```text
-submitForm
-  createSession
-    persistPrompt
-    launchAgent
-  navigateToSession
-```
-
-- Show UI structure as a component tree, including state and module boundaries that matter:
-
-```text
-<SessionPage> (apps/example/src/routes/session.tsx)
-  useSessionEvents()
-  <SessionToolbar>
-    <RunSkillButton> (packages/ui)
-```
-
-- Show file responsibility or a broad refactor as a shallow file tree:
-
-```text
-src/
-├── commands/       # parses user actions
-├── sessions/       # owns session state
-└── transport/      # sends API requests
-```
-
-- Show component interaction, control flow, or data flow with Mermaid:
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant UI
-    participant Daemon
-    User->>UI: choose command
-    UI->>Daemon: send expanded prompt
-    Daemon-->>UI: stream result
-```
-
-- Use `diff` when the point is what changes and the surrounding shape already exists. Match the diff shape to the topic.
-
-For a component change:
-
-```diff
- <SessionPage>
-   useSessionEvents()
-   <SessionToolbar>
-+    <RunSkillButton />
-   <SessionTimeline>
-+    <SkillResultCard />
-```
-
-For a file-layout change:
-
-```diff
- src/
- ├── commands/
-+│   └── show-me.ts       # expands the slash command
- ├── sessions/
--└── transport.ts
-+└── transport/
-+    ├── client.ts
-+    └── stream.ts
-```
-
-For a call-tree or call-stack change:
-
-```diff
- submitForm
-   createSession
-     persistPrompt
-+    expandSkillMention
-     launchAgent
--  navigateToSession
-+  navigateToSession
-+    subscribeToEvents
-```
-
-For a state or control-flow change:
-
-```diff
- on(save)
--  write content
-+  if content is unchanged
-+    return cached result
-+  write new content
-+  invalidate cache
-```
-
-- Show the whole block when most of it is new, when omitted context would hide ownership or order, or when the user needs a copyable target shape:
-
-```ts
-function expandSkill(command: string): string {
-  const skillName = command.slice(1);
-  return `use the ${skillName} skill`;
-}
-```
+Before delivering, check the final report for visible diagrams, preserved indentation and clearly differentiated changes, with no raw text instead of illustrations or diagram source left on display.
 
 ## Impact and Merge Danger
 

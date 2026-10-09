@@ -16,8 +16,9 @@ Write the answer as one HTML page, open it, and keep the chat reply short.
 ## Formatting
 
 - **Self-contained**: one file with inline CSS. The only external load is Mermaid from a CDN, and only when the page has diagrams.
+- **Layout**: responsive viewport and no fixed-width layout
 - **Theme**: dark only. Pure black background (`#000`), white text, grey for secondary text and borders. One accent color, used rarely: links and the single most important highlight.
 - **Spec, not landing page**: dense and readable. Start with the title and a short summary of the conclusion, then plain headings, short paragraphs, tables and lists. A narrow reading column, system fonts, small headings, tight spacing.
-- **Plain voice**: factual, declarative sentences with no marketing words. Use commas, colons or parentheses where an em dash would go; the page contains no em dashes.
+- **Plain voice**: factual, declarative sentences with no marketing words. Use commas, colons or parentheses where an em dash would go; no em dashes.
 - **Scripts**: inline, and only when interactivity helps the presentation (tabs, toggles, sortable tables). A static page needs none.
 - **UI mockups**: build them in HTML and CSS inside the page. Label them A, B, C, and lay them out side by side at the same size, each with its label and a one-line description, so the differences show at a glance.
