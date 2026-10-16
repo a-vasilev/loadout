@@ -20,5 +20,5 @@ Write the answer as one HTML page, open it, and keep the chat reply short.
 - **Theme**: dark only. Pure black background (`#000`), white text, grey for secondary text and borders. One accent color, used rarely: links and the single most important highlight.
 - **Spec, not landing page**: dense and readable. Start with the title and a short summary of the conclusion, then plain headings, short paragraphs, tables and lists. A narrow reading column, system fonts, small headings, tight spacing.
 - **Plain voice**: factual, declarative sentences with no marketing words. Use commas, colons or parentheses where an em dash would go; no em dashes.
-- **Scripts**: inline, and only when interactivity helps the presentation (tabs, toggles, sortable tables). A static page needs none.
+- **Scripts**: inline, and when interactivity helps the presentation (tabs, toggles, sortable tables). A static page needs none. Graphs and tables should have some interactivity to make them easier to use. For mermaid diagrams include tools to zoom and full screen the diagram, so it's more readable.
 - **UI mockups**: build them in HTML and CSS inside the page. Label them A, B, C, and lay them out side by side at the same size, each with its label and a one-line description, so the differences show at a glance.
