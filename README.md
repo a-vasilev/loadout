@@ -54,3 +54,4 @@ See [AGENTS.md](AGENTS.md) for the conventions. In short: create
 node scripts/validate.mjs
 claude plugin validate .
 ```
+Basi kakvo se sluchi
