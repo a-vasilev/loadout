@@ -55,3 +55,4 @@ node scripts/validate.mjs
 claude plugin validate .
 ```
 Ono i az kvo napraih
+Basi kakvo se sluchi
